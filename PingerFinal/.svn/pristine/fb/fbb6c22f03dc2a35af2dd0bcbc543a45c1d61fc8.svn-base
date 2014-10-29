@@ -1,0 +1,43 @@
+<html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Unit Test Results: All Tests</title>
+<link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+</head>
+<body onload="open('allclasses-frame.html','classListFrame')">
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h2>All Tests</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Class</th><th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/0_FilePingRepositorySpecs.html">FilePingRepositorySpecs</a></td><td><a name="itWritesToFileRepository"></a><a href="ee/pinger/database/0_FilePingRepositorySpecs.html#itWritesToFileRepository">itWritesToFileRepository</a></td><td>Success</td><td></td><td>0.570</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/1_MyFileWriterSpecs.html">MyFileWriterSpecs</a></td><td><a name="itWritesAFile"></a><a href="ee/pinger/database/1_MyFileWriterSpecs.html#itWritesAFile">itWritesAFile</a></td><td>Success</td><td></td><td>0.017</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html">MySqlPingRepositorySpecs</a></td><td><a name="itShouldWriteToMySQLRepo"></a><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html#itShouldWriteToMySQLRepo">itShouldWriteToMySQLRepo</a></td><td>Success</td><td></td><td>0.109</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html">MySqlPingRepositorySpecs</a></td><td><a name="itVerifiesTheDataWrittenInDatabase"></a><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html#itVerifiesTheDataWrittenInDatabase">itVerifiesTheDataWrittenInDatabase</a></td><td>Success</td><td></td><td>0.010</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html">MySqlPingRepositorySpecs</a></td><td><a name="itReadsFromRepository"></a><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html#itReadsFromRepository">itReadsFromRepository</a></td><td>Success</td><td></td><td>0.036</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/3_PingTrendSpecs.html">PingTrendSpecs</a></td><td><a name="itVerifiesIfDataIsWrittenToFile"></a><a href="ee/pinger/database/3_PingTrendSpecs.html#itVerifiesIfDataIsWrittenToFile">itVerifiesIfDataIsWrittenToFile</a></td><td>Success</td><td></td><td>0.015</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a href="ee/pinger/database/4_WebResourceServletSpecs.html">WebResourceServletSpecs</a></td><td><a name="itShouldWriteToRepository"></a><a href="ee/pinger/database/4_WebResourceServletSpecs.html#itShouldWriteToRepository">itShouldWriteToRepository</a></td><td>Success</td><td></td><td>4.449</td>
+</tr>
+</table>
+</body>
+</html>

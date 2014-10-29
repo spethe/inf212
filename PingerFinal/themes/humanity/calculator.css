@@ -1,0 +1,25 @@
+.key {
+	height:35px;
+	width:80px;
+	vertical-align: top;
+	font-size: medium;
+}
+
+.display {
+	height:40px;
+	text-align: right;
+	vertical-align:bottom;
+	font-family: Verdana,Arial,sans-serif; 
+	font-size: 2.0em;
+	font-weight: normal;
+}
+
+.status {
+	text-align: right;
+	font-size:xx-small;
+	border: 0px;
+}
+
+.calculator-ui {
+	border: 1px solid #cdc3b7;
+}

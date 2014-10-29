@@ -1,0 +1,34 @@
+<html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Test Results: All Errors</title>
+<link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+</head>
+<body onload="open('allclasses-frame.html','classListFrame')">
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h2>All Errors</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Class</th><th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html">MySqlPingRepositorySpecs</a></td><td><a name="ee.pinger.database.MySqlPingRepositorySpecs"></a><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html#ee.pinger.database.MySqlPingRepositorySpecs">ee.pinger.database.MySqlPingRepositorySpecs</a></td><td>Error</td><td>Unknown database 'pingerTestInfo'<br>
+<br>
+<code>com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Unknown database 'pingerTestInfo'<br>	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)<br>	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2822)<br>	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:777)<br>	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3216)<br>	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1147)<br>	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2595)<br>	at com.mysql.jdbc.Connection.&lt;init&gt;(Connection.java:1509)<br>	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)<br>	at java.sql.DriverManager.getConnection(DriverManager.java:579)<br>	at java.sql.DriverManager.getConnection(DriverManager.java:221)<br>	at ee.pinger.database.MySqlConnector.getConnection(MySqlConnector.java:27)<br>	at ee.pinger.database.MySqlPingRepositorySpecs.setupDatabase(MySqlPingRepositorySpecs.java:31)<br>
+</code></td><td>0.000</td>
+</tr>
+<tr valign="top" class="Error">
+<td><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html">MySqlPingRepositorySpecs</a></td><td><a name="ee.pinger.database.MySqlPingRepositorySpecs"></a><a href="ee/pinger/database/2_MySqlPingRepositorySpecs.html#ee.pinger.database.MySqlPingRepositorySpecs">ee.pinger.database.MySqlPingRepositorySpecs</a></td><td>Error</td><td>N/A<br>
+<br>
+<code>java.lang.NullPointerException<br>	at ee.pinger.database.MySqlPingRepositorySpecs.tearDownDatabase(MySqlPingRepositorySpecs.java:41)<br>
+</code></td><td>0.000</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,3 @@
+create database pingerinfo;
+use pingerinfo;
+create table pingerlog(servletName VARCHAR(100), pingTime VARCHAR(40), processingTime long);

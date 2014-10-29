@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project default="war" name="Pinger">
+
+	<path id="compile.classpath">
+		<fileset dir="WebContent/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="dist" />
+		<delete dir="C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/Pinger" />
+		<delete dir="build" />
+		<delete dir="reports" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+		<mkdir dir="reports" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac destdir="build/classes" debug="true" srcdir="src">
+			<classpath refid="compile.classpath">
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit haltonfailure="no" printsummary="yes">
+			<classpath refid="compile.classpath" />
+			<classpath path="build/classes" />
+			<formatter type="xml" />
+			<batchtest todir="reports">
+				<fileset dir="build/classes">
+					<include name="**/*Specs*.*" />
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="reports">
+			<fileset dir="reports">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report todir="reports" />
+		</junitreport>
+	</target>
+
+	<target name="war" depends="jar">
+		<war destfile="C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/Pinger.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent">
+			</fileset>
+			<lib dir="WebContent/lib">
+			</lib>
+			<classes dir="build/classes">
+			</classes>
+		</war>
+	</target>
+
+	<target name="jar" depends="compile,test">
+		<jar destfile="dist/pingerTrend.jar">
+			
+			<fileset dir="build/classes">
+				<include name="**/*.*" />
+			</fileset>
+
+			<fileset dir="WebContent/lib">
+				<include name="mysql-connector-java-5.1.22-bin.jar" />
+			</fileset>
+
+			<archives>
+				<zips>
+					<fileset dir="WebContent/lib" includes="mysql-connector-java-5.1.22-bin.jar" />
+				</zips>
+			</archives>
+
+			<manifest>
+				<attribute name="Main-Class" value="ee.pinger.database.PingTrendGenerator" />
+				<attribute name="Class-Path" value="." />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="tomcat-start" depends="war">
+		<java jar="C:/Program Files/Apache Software Foundation/Tomcat 7.0/bin/bootstrap.jar" fork="true">
+			<jvmarg value="-Dcatalina.home=/home/sameer/apache-tomcat-7.0.29" />
+		</java>
+	</target>
+
+</project>
