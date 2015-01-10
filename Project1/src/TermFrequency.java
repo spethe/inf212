@@ -50,7 +50,7 @@ public class TermFrequency {
         sorted_freq_map.putAll(termFreqMap);
         int count =0;
         for(Map.Entry<String, Integer> entry : sorted_freq_map.entrySet()){
-            System.out.println(entry.getKey()+ " " + entry.getValue());
+            System.out.println(entry.getKey()+ " - " + entry.getValue());
             if(++count>=25)
                 break;
         }
