@@ -10,25 +10,72 @@ public class TermFrequency {
 
     public static void main(String[] args) throws FileNotFoundException {
         List<String> stopWordList = new ArrayList<String>();
-        Map<String, Integer> termFreqMap = new TreeMap<String, Integer>();
+        Map<String, Integer> termFreqMap = new HashMap<String, Integer>();
+
 
         Scanner stopWordFileScanner = new Scanner(new File("../stop_words.txt")).useDelimiter(",");
         while(stopWordFileScanner.hasNext()){
             stopWordList.add(stopWordFileScanner.next());
         }
 
-        Scanner corpusFileScanner = new Scanner(new File(args[0]));
+        Scanner corpusFileScanner = new Scanner(new File("pride-and-prejudice.txt"));
 
         while(corpusFileScanner.hasNext()){
-            String term = corpusFileScanner.next().toLowerCase().replaceAll("\\W", "");
-            if(!stopWordList.contains(term)){
-                Integer freq = termFreqMap.containsKey(term) ? termFreqMap.put(term, (termFreqMap.get(term)) + 1) : termFreqMap.put(term, 1);
+            String term = corpusFileScanner.next().toLowerCase();
+            String key;
+            Integer value;
+
+            char[]termArray = term.toCharArray();
+
+            StringBuilder newTermBuilder = new StringBuilder();
+            String newTerm ="";
+            for(int i=0, j=0;i<termArray.length;i++){
+                if(Character.isLetter(termArray[i])){
+                    newTerm = newTermBuilder.append(termArray[i]).toString();
+                }else{
+
+                    if(newTerm.matches("[a-z]+") && newTerm.length()>1){
+                        populateFrequencyFor(newTerm,stopWordList,termFreqMap);
+                        newTermBuilder.setLength(0);
+                        newTerm="";
+                    }else continue;
+                }
+            }
+            if(newTerm.length()>1){
+                populateFrequencyFor(newTerm,stopWordList ,termFreqMap);
             }
         }
 
-        for(String key : termFreqMap.keySet()){
-            System.out.println(key + "  " + termFreqMap.get(key));
+        TreeMap<String,Integer> sorted_freq_map = new TreeMap<String,Integer>(new ValueComparator(termFreqMap));
+        sorted_freq_map.putAll(termFreqMap);
+        int count =0;
+        for(Map.Entry<String, Integer> entry : sorted_freq_map.entrySet()){
+            System.out.println(entry.getKey()+ " " + entry.getValue());
+            if(++count>=25)
+                break;
         }
 
+    }
+
+    private static void populateFrequencyFor(String term, List<String> stopWordList,Map<String,Integer> termFreqMap){
+        if(!stopWordList.contains(term)){
+            Integer freq = termFreqMap.containsKey(term) ? termFreqMap.put(term, (termFreqMap.get(term)) + 1) : termFreqMap.put(term, 1);
+        }
+    }
+    static class ValueComparator implements Comparator<String> {
+
+        Map<String, Integer> base;
+        public ValueComparator(Map<String, Integer> base) {
+            this.base = base;
+        }
+
+        // Note: this comparator imposes orderings that are inconsistent with equals.
+        public int compare(String a, String b) {
+            if (base.get(a) >= base.get(b)) {
+                return -1;
+            } else {
+                return 1;
+            } // returning 0 would merge keys
+        }
     }
 }
